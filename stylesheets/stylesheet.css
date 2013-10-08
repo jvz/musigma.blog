@@ -72,13 +72,18 @@ header {
 }
 
 header h1,
-header h1 a {
+header h1 a,
+header h1 a:hover {
   letter-spacing: -1px;
   font-size: 72px;
   color: #fff;
   line-height: 1;
   margin-bottom: 0.2em;
   width: 540px;
+}
+
+header h1 a:hover {
+  border-bottom: solid 1px #fff;
 }
 
 header h2 {
