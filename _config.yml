@@ -1,0 +1,5 @@
+name: "@jvz"
+markdown: redcarpet
+pygments: true
+timezone: America/Chicago
+encoding: UTF-8
