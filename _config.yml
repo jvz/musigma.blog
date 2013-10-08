@@ -3,4 +3,4 @@ markdown: redcarpet
 pygments: true
 timezone: America/Chicago
 encoding: UTF-8
-baseurl: "http://mjunx.org/"
+baseurl: "http://mjunx.org"
