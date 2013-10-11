@@ -226,7 +226,7 @@ Curiosity, relinquishment, lightness, evenness, argument, empiricism,
 simplicity, humility, perfectionism, precision, scholarship, and
 the void.
 
----
+* * *
 
 Copyright © 2006 [Eliezer Yudkowsky][yudkowsky] and licensed under the
 [CC BY/ND 3.0][license] license.
