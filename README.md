@@ -1,7 +1,7 @@
 This is the source code for my blog on [musigma.org](http://musigma.org/).
 
 ## Jekyll Info
-0. Initial Jekyll install: `sudo gem install bundler && bundle install`
+0. Initial Jekyll install: `gem install bundler && bundle install`
 0. Test the site by executing: `bundle exec jekyll serve`
 0. New posts go in the `_posts` directory.
 0. New posts follow the naming convention `YYYY-MM-DD-slug.md`
