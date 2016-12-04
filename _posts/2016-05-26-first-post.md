@@ -1,5 +1,6 @@
 ---
 layout: post
+author: "Matt Sicker"
 title: "First Post"
 date: 2016-05-26 19:46:17 -0500
 ---

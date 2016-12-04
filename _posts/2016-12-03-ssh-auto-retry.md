@@ -1,5 +1,6 @@
 ---
 layout: post
+author: "Matt Sicker"
 title: "Connect to an SSH server until it works"
 date: 2016-12-03 21:00:00 -0600
 categories: shell
