@@ -14,9 +14,20 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://musigma.org" # the base hostname & protocol for your site
 twitter_username: jvz
 github_username:  jvz
+exclude: ["CNAME", "Gemfile", "Gemfile.lock", "README.md"]
+timezone: "America/Chicago"
+encoding: "utf-8"
 
 # Build settings
 markdown: kramdown
 
 gems:
   - jekyll-avatar
+
+# Default post settings
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      author: "Matt Sicker"
