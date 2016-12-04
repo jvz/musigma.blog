@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img src="https://www.gravatar.com/avatar/a30f8217f504fd0aba5aaa0ba7afb817" class="float-left"/>
+{% avatar jvz size=80 %}
 My name is Matt Sicker. I'm a software engineer with a mathematical bias. I am
 an advocate of [free and open source software][foss], and I contribute to
 [Apache Log4j][log4j] along with [various other projects][gh]. I am currently

@@ -17,3 +17,6 @@ github_username:  jvz
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - jekyll-avatar
