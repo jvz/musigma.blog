@@ -1,7 +1,13 @@
 This is the source code for my blog on [musigma.org](http://musigma.org/).
 
-## Jekyll Info
-0. Initial Jekyll install: `gem install bundler && bundle install`
+## Installation on macOS
+0. Install rbenv: `brew install rbenv`
+0. Enable rbenv oh-my-zsh plugin.
+0. Install ruby: `rbenv install 2.3.3`
+0. Refresh: `rbenv rehash`
+0. Install bundler: `gem install bundler`
+0. Refresh again: `rbenv rehash`
+0. Install jekyll: `bundle install`
 0. Test the site by executing: `bundle exec jekyll serve`
 0. New posts go in the `_posts` directory.
 0. New posts follow the naming convention `YYYY-MM-DD-slug.md`
