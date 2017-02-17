@@ -78,82 +78,82 @@ public class InputStreamSubscription implements Subscription {
         final InputStream stream,
         final Subscriber<? super Byte> subscriber
     ) {
-	this.stream = stream;
-	this.subscriber = subscriber;
+        this.stream = stream;
+        this.subscriber = subscriber;
     }
 
     @Override
     public void request(final long n) {
-	if (cancelled) return;
-	if (n <= 0) {
-	    error(new IllegalArgumentException("Rule 3.9"));
-	    return;
-	}
-	if (requested.getAndAdd(n) == 0) {
-	    if (n == Long.MAX_VALUE) {
-		requestUnbounded();
-	    } else {
-		requestBounded(n);
-	    }
-	}
+        if (cancelled) return;
+        if (n <= 0) {
+            error(new IllegalArgumentException("Rule 3.9"));
+            return;
+        }
+        if (requested.getAndAdd(n) == 0) {
+            if (n == Long.MAX_VALUE) {
+                requestUnbounded();
+            } else {
+                requestBounded(n);
+            }
+        }
     }
 
     private void requestBounded(final long n) {
-	long i = 0, req = n;
-	while (!cancelled) {
-	    while (i < req) {
-		if (cancelled) return;
-		requestNextByte();
-		i++;
-	    }
-	    req = requested.get();
-	    if (i == req) {
-		req = requested.addAndGet(-i);
-		if (req == 0) return;
-		i = 0;
-	    }
-	}
+        long i = 0, req = n;
+        while (!cancelled) {
+            while (i < req) {
+                if (cancelled) return;
+                requestNextByte();
+                i++;
+            }
+            req = requested.get();
+            if (i == req) {
+                req = requested.addAndGet(-i);
+                if (req == 0) return;
+                i = 0;
+            }
+        }
     }
 
     private void requestUnbounded() {
-	while (!cancelled) {
-	    requestNextByte();
-	}
+        while (!cancelled) {
+            requestNextByte();
+        }
     }
 
     private void requestNextByte() {
-	int read;
-	try {
-	    read = stream.read();
-	} catch (IOException e) {
-	    error(e);
-	    return;
-	}
-	if (cancelled) return;
-	if (read == -1) {
-	    subscriber.onComplete();
-	    cancel();
-	    return;
-	}
-	subscriber.onNext((byte) read);
+        int read;
+        try {
+            read = stream.read();
+        } catch (IOException e) {
+            error(e);
+            return;
+        }
+        if (cancelled) return;
+        if (read == -1) {
+            subscriber.onComplete();
+            cancel();
+            return;
+        }
+        subscriber.onNext((byte) read);
     }
 
     @Override
     public void cancel() {
-	if (cancelled) return;
-	try {
-	    stream.close();
-	} catch (IOException e) {
-	    subscriber.onError(e);
-	} finally {
-	    cancelled = true;
-	}
+        if (cancelled) return;
+        try {
+            stream.close();
+        } catch (IOException e) {
+            subscriber.onError(e);
+        } finally {
+            cancelled = true;
+        }
     }
 
     void error(final Throwable t) {
-	if (cancelled) return;
-	subscriber.onError(t);
-	cancelled = true;
+        if (cancelled) return;
+        subscriber.onError(t);
+        cancelled = true;
     }
 }
 ```
