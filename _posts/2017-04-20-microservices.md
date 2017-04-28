@@ -4,19 +4,26 @@ title: "Why Use a Microservice Architecture"
 date: 2017-04-20 09:00:00 -0500
 categories: architecture
 ---
-In previous posts, we've gone over some newer frameworks and libraries for
-developing reactive microservices. Today, we'll take a step back and look at why
-developers should even consider using microservices in their projects.
-Microservices are a general category of software architecture that are loosely
-inspired by [service oriented architecture][soa] (SOA) common to previous
-protocols such as SOAP, but with a focus on physical separation between
-services. While the general idea behind SOA that code should be organized and
-structured into loosely coupled services was sound, each around a particular
-[domain][ddd] or category of business logic, the execution left something to be
-desired. Common implementations of SOA relied on monolithic deployments, overly
-complicated protocols that were never implemented quite the same from framework
-to framework, and generally required expensive software licenses from
-established IT companies.
+<!--
+TODO: data source bottlenecks and data ownership in microservices
+TODO: write some sort of conclusion
+-->
+Microservice architecture is the latest fad in software development, and as such
+it comes with numerous conflicting definitions. To help clear up this confusion,
+we'll discuss what microservices are, how they relate to older development
+architecture patterns, and why and when they are useful. In the enterprise
+world, [service oriented architecture][soa] was the established paradigm in
+software development, and this typically incorporated the SOAP standard and
+web services. Some concepts from SOA, such as loose coupling and [domain-driven
+design][ddd], translate well into microservices, but other concepts such as
+global transactions and global data consistency do not scale well in such
+an architecture. One major pain point in SOA that microservices helps to
+address are monolithic applications and the pains behind deploying new
+versions of them. Another problem stemmed from incompatible implementations
+of SOAP being widely used which tended to nullify the benefits of using a
+web services standard for loose coupling. Expensive proprietary software was
+also a large downside to typical SOA style development which has not yet
+reappeared to a similar extent in microservices.
 
 Due in part to the existing complexity of SOA usage, many developers eventually
 found themselves trapped by applications that could not be iterated on rapidly
