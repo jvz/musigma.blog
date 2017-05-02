@@ -4,10 +4,6 @@ title: "Why Use a Microservice Architecture"
 date: 2017-04-20 09:00:00 -0500
 categories: architecture
 ---
-<!--
-TODO: data source bottlenecks and data ownership in microservices
-TODO: write some sort of conclusion
--->
 Microservice architecture is the latest fad in software development, and as such
 it comes with numerous conflicting definitions. To help clear up this confusion,
 we'll discuss what microservices are, how they relate to older development
@@ -19,11 +15,13 @@ design][ddd], translate well into microservices, but other concepts such as
 global transactions and global data consistency do not scale well in such
 an architecture. One major pain point in SOA that microservices helps to
 address are monolithic applications and the pains behind deploying new
-versions of them. Another problem stemmed from incompatible implementations
-of SOAP being widely used which tended to nullify the benefits of using a
-web services standard for loose coupling. Expensive proprietary software was
+versions of them. Another problem stems from incompatible implementations
+of SOAP being widely used which tend to nullify the benefits of using a
+web services standard for loose coupling. Expensive proprietary software is
 also a large downside to typical SOA style development which has not yet
-reappeared to a similar extent in microservices.
+reappeared to a similar extent in microservices. Data scalability and
+schema evolution are another hard issue in monolithic architectures which tend
+to be more manageable in a microservices architecture.
 
 Due in part to the existing complexity of SOA usage, many developers eventually
 found themselves trapped by applications that could not be iterated on rapidly
@@ -81,6 +79,32 @@ developers no longer have to rely on overly broad enterprise style frameworks.
 This allows more room for experimentation with newer technology and design
 patterns which can then be shared with other developers to help improve the
 overall system.
+
+Choosing appropriate programming languages, libraries, and frameworks are only
+one part of the many choices required for each microservice. Since most
+applications contain some sort of persistent state, most applications require
+some sort of database or general persistent storage area. When separating an
+application into microservices, each microservice can and should have ownership
+over the data it needs while providing access to it through its own public APIs.
+A common problem in many actual implementations of microservices is sharing
+databases between services. Not only does this tightly couple those applications
+in regards to scaling, schema management, and other administrative tasks, but it
+also destroys a lot of the advantages of using a microservice architecture.
+Though in practice, a single database cluster can be used to serve multiple
+microservices, as long as each microservice uses its own database within that
+cluster, the choice to physically separate that database is much easier than
+when multiple applications share a database, even if they use their own tables.
+
+The choice of database, cache, and other infrastructural addons to applications
+should be left to the individual microservices, though in order to make the
+operations sides of things at least somewhat practical, it is generally a good
+idea to limit the number of different choices to use. For example, an
+organization may wish to standardize on a single type of [relational
+database][postgres], a single [NoSQL database][cassandra], a single [time-series
+database][influxdb], a single [distributed cache][redis], etc. Of course, this
+should remain more of a guideline rather than a hard rule in order to prevent
+wasted effort fighting the tools rather than using what works best in each use
+case.
 
 An important consequence of the physical separation between microservices is
 that it makes it more difficult to create minimally cohesive systems. No longer
@@ -190,6 +214,18 @@ realistic, the underlying idea of passing messages between the frontend and
 backend is interesting and should be considered as another alternative to
 traditional synchronous request/response APIs.
 
+The patterns behind microservice architectures generally parallel the wider
+internet. Instead of attempting to abstract away distributed systems, developers
+should be embracing them. A monolithic architecture attempts to group everything
+together under the illusion that a simpler local programming model will work
+out, but in reality, these patterns do not scale well on the web, in big data,
+in the internet of things, in artifical intelligence, or really any non-trivial
+application of software engineering or computer science. As technology continues
+to improve, past assumptions that allowed monolithic software to thrive no
+longer work well for most applications. Embrace the horizontal nature of
+interconnected technology as this is still only the beginning as distributed
+systems of the future continue to spread out.
+
 [soa]: https://en.wikipedia.org/wiki/Service-oriented_architecture
 [ddd]: https://en.wikipedia.org/wiki/Domain-driven_design
 [agile]: http://agilemanifesto.org/
@@ -219,3 +255,7 @@ traditional synchronous request/response APIs.
 [zipkin]: http://zipkin.io/
 [graphql]: http://graphql.org/
 [stomp]: https://stomp.github.io/
+[postgres]: https://www.postgresql.org/
+[cassandra]: https://cassandra.apache.org/
+[influxdb]: https://www.influxdata.com/
+[redis]: https://redis.io/
