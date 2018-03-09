@@ -26,7 +26,7 @@ encoding: "utf-8"
 # Build settings
 markdown: kramdown
 
-gems:
+plugins:
   - jekyll-avatar
 
 # Default post settings
