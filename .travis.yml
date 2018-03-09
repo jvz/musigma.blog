@@ -1,0 +1,18 @@
+language: ruby
+cache: bundler
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_05814180a0ad_key -iv $encrypted_05814180a0ad_iv -in .travis/deploy_key.enc -out .travis/deploy_key -d
+
+script:
+  - bundle exec jekyll build
+
+after_success:
+  - eval "$(ssh-agent -s)"
+  - chmod 600 .travis/deploy_key
+  - ssh-add .travis/deploy_key
+  - "scp -r _site/* musigma_musigmablog@ssh.phx.nearlyfreespeech.net:"
+
+branches:
+  only:
+    - master
