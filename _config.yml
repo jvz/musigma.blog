@@ -11,10 +11,15 @@ email: boards@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   A blog about programming mostly.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://musigma.org" # the base hostname & protocol for your site
+url: "https://musigma.blog" # the base hostname & protocol for your site
 twitter_username: jvz
 github_username:  jvz
-exclude: ["CNAME", "Gemfile", "Gemfile.lock", "README.md"]
+exclude: 
+  - "CNAME"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "vendor/bundle"
 timezone: "America/Chicago"
 encoding: "utf-8"
 
