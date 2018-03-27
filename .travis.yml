@@ -14,7 +14,7 @@ after_success:
   - eval "$(ssh-agent -s)"
   - chmod 600 .travis/deploy_key
   - ssh-add .travis/deploy_key
-  - "tar -czf - -C _site . | ssh musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzf -'"
+  - "tar -czvf - -C _site . | ssh musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzvf -'"
 
 branches:
   only:
