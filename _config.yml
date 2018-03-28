@@ -29,6 +29,7 @@ markdown: kramdown
 
 plugins:
   - jekyll-avatar
+  - jekyll-sitemap
 
 # Default post settings
 defaults:
