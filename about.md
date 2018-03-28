@@ -1,10 +1,12 @@
 ---
 layout: page
-title: About
+title: About Matt Sicker
+menu-title: About
 permalink: /about/
 ---
 
 {% avatar jvz size=80 %}
+
 Matt Sicker is a functional programmer and [free software][foss] evangelist.
 He currently runs MuSigma Consulting as a software engineering consultant,
 developer evangelist, and instructor. He is a member of

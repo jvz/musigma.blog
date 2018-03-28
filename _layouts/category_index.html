@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<p class="title is-2 has-text-info">
+    {{ page.title }}
+</p>
+<p class="subtitle is-6">
+    {{ page.posts | size }} posts in this category
+</p>
+
+<section class="posts-group">
+    {% for post in page.posts %}
+        {% include components/post-snippet.html %}
+        {% if forloop.last == false %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+</section>

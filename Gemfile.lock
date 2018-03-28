@@ -100,6 +100,9 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-avatar (0.5.0)
       jekyll (~> 3.0)
+    jekyll-category-pages (1.0.0)
+      jekyll (~> 3.5)
+      jekyll-paginate (~> 1.1, >= 1.0.0)
     jekyll-coffeescript (1.1.1)
       coffee-script (~> 2.2)
       coffee-script-source (~> 1.11.1)
@@ -170,6 +173,8 @@ GEM
     jekyll-theme-modernist (0.1.0)
       jekyll (~> 3.5)
       jekyll-seo-tag (~> 2.0)
+    jekyll-theme-nn (0.1.6)
+      jekyll (~> 3.7)
     jekyll-theme-primer (0.5.2)
       jekyll (~> 3.5)
       jekyll-github-metadata (~> 2.9)
@@ -245,6 +250,8 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-category-pages
+  jekyll-theme-nn
 
 BUNDLED WITH
    1.16.1

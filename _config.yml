@@ -1,11 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
 title: MuSigma
 email: boards@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -13,6 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://musigma.blog" # the base hostname & protocol for your site
 permalink: /:year/:month/:day/:title:output_ext
+author: Matt Sicker
 twitter_username: jvz
 github_username:  jvz
 exclude: 
@@ -23,18 +16,11 @@ exclude:
   - "vendor/bundle"
 timezone: "America/Chicago"
 encoding: "utf-8"
-
-# Build settings
 markdown: kramdown
-
+theme: jekyll-theme-nn
 plugins:
   - jekyll-avatar
   - jekyll-sitemap
-
-# Default post settings
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      author: "Matt Sicker"
+  - jekyll-category-pages
+category_path: category
+category_layout: category_index.html
