@@ -1,0 +1,17 @@
+# legacy urls
+#/architecture/2017/04/20/microservices.html
+#/bash/psgrep/2016/08/01/psgrep-1.0.7.html
+#/bash/ssh/2016/12/03/ssh-auto-retry.html
+#/cicd/2018/03/27/travis.html
+#/elm/2016/11/28/elm.html
+#/java/2016/11/14/lagom.html
+#/java/2016/11/21/reactor.html
+#/java/log4j/2016/05/29/log4j-2.6.html
+#/logging/2017/11/06/logging.html
+#/scala/2017/07/03/akka-cqrs.html
+#/security/2016/12/26/reactive-security.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule "^([a-z]+/)+(\d{4}/\d{2}/\d{2}/[^/]+\.html)$" "/$2" [R=301]
+</IfModule>

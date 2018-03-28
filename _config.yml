@@ -12,6 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   A blog about programming mostly.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://musigma.blog" # the base hostname & protocol for your site
+permalink: /:year/:month/:day/:title:output_ext
 twitter_username: jvz
 github_username:  jvz
 exclude: 
