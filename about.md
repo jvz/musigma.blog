@@ -11,7 +11,7 @@ Matt Sicker is a functional programmer and [free software][foss]
 evangelist. He currently works at [CloudBees][cloudbees] as a
 software engineer involved with [Jenkins][jenkins]. He is a member
 of the [Apache Software Foundation][asf]. At Apache, he is currently
-serving as the Assistant Secretary and VP Logging Services and is
+serving as Secretary and VP Logging Services and is
 a PMC member of [Apache Logging Services][logging] and [Apache
 Incubator][incubator] projects. He also works on other [open source
 side projects][gh]. Current areas of expertise revolve around the
