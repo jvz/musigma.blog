@@ -1,4 +1,4 @@
-name: Deploy Site
+name: site
 
 on:
   push:
@@ -16,19 +16,19 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Build
+    - name: Build Jekyll Site
       run: |
         gem install bundler
         bundle install
         bundle exec jekyll build
-    - name: Deploy
+    - name: Deploy Tarball
       env:
         SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
         SSH_KEY: ${{ secrets.SSH_KEY }}
       run: |
-        echo "$SSH_KNOWN_HOSTS" >$HOME/.ssh/known_hosts
-        echo "$SSH_KEY" >$HOME/.ssh/id_ed25519
-        chmod 600 $HOME/.ssh/id_ed25519
-        #eval "$(ssh-agent -s)"
-        #ssh-add .github/workflows/ssh_key
+        echo "$SSH_KNOWN_HOSTS" >.github/known_hosts
+        echo "$SSH_KEY" >.github/id_ed25519
+        chmod 600 .github/id_ed25519
+        eval "$(ssh-agent -s)"
+        ssh-add .github/id_ed25519
         tar -czvf - -C _site . | ssh musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzvf -'
