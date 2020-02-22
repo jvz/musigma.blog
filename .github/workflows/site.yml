@@ -19,4 +19,14 @@ jobs:
     - name: Build
       run: |
         gem install bundler
+        bundle install
         bundle exec jekyll build
+    - name: Deploy
+      env:
+        SSH_KEY: ${{ secrets.SSH_KEY }}
+      run: |
+        echo "$SSH_KEY" >.github/workflows/ssh_key
+        chmod 600 .github/workflows/ssh_key
+        eval "$(ssh-agent -s)"
+        ssh-add .github/workflows/ssh_key
+        tar -czvf - -C _site . | ssh musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzvf -'
