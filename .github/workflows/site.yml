@@ -31,4 +31,4 @@ jobs:
         chmod 600 .github/workflows/ssh_key
         eval "$(ssh-agent -s)"
         ssh-add .github/workflows/ssh_key
-        tar -czvf - -C _site . | ssh -T -o UserKnownHostsFile=$PWD/.github/workflows/known_hosts musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzvf -'
+        tar -czvf - -C _site . | ssh -T -v -o StrictHostKeyChecking=off -o UserKnownHostsFile=$PWD/.github/workflows/known_hosts musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzvf -'
