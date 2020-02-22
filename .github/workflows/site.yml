@@ -26,9 +26,9 @@ jobs:
         SSH_KEY: ${{ secrets.SSH_KEY }}
         SSH_KNOWN_HOSTS: ${ secrets.SSH_KNOWN_HOSTS }}
       run: |
-        echo "$SSH_KNOWN_HOSTS" >$HOME/.ssh/known_hosts
+        echo "$SSH_KNOWN_HOSTS" .github/workflows/known_hosts
         echo "$SSH_KEY" >.github/workflows/ssh_key
         chmod 600 .github/workflows/ssh_key
         eval "$(ssh-agent -s)"
         ssh-add .github/workflows/ssh_key
-        tar -czvf - -C _site . | ssh musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzvf -'
+        tar -czvf - -C _site . | ssh -o UserKnownHostsFile=.github/workflows/known_hosts musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzvf -'
