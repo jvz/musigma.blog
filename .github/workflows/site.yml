@@ -26,7 +26,7 @@ jobs:
         SSH_KEY: ${{ secrets.SSH_KEY }}
         SSH_KNOWN_HOSTS: ${ secrets.SSH_KNOWN_HOSTS }}
       run: |
-        echo "$SSH_KNOWN_HOSTS" .github/workflows/known_hosts
+        echo "$SSH_KNOWN_HOSTS" >.github/workflows/known_hosts
         echo "$SSH_KEY" >.github/workflows/ssh_key
         chmod 600 .github/workflows/ssh_key
         eval "$(ssh-agent -s)"
