@@ -16,10 +16,18 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Build Jekyll Site
+    - name: Cache Dependencies
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-${{ hashFiles('Gemfile.lock') }}
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
       run: |
         gem install bundler
-        bundle install
+        bundle install --path vendor/bundle
+    - name: Build Jekyll Site
+      run: |
         bundle exec jekyll build
     - name: Deploy Tarball
       env:
