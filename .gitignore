@@ -2,3 +2,5 @@ _site
 .sass-cache
 .jekyll-metadata
 .github/workflows/ssh_key
+vendor/bundle
+.bundle
