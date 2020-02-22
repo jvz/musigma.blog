@@ -29,6 +29,6 @@ jobs:
         echo "$SSH_KNOWN_HOSTS" >.github/known_hosts
         echo "$SSH_KEY" >.github/id_ed25519
         chmod 600 .github/id_ed25519
-        #eval "$(ssh-agent -s)"
-        #ssh-add .github/id_ed25519
-        tar -czvf - -C _site . | ssh -v -i .github/id_ed25519 -o UserKnownHostsFile=.github/known_hosts musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzvf -'
+        eval "$(ssh-agent -s)"
+        ssh-add .github/id_ed25519
+        tar -czvf - -C _site . | ssh -o UserKnownHostsFile=.github/known_hosts musigma_musigmablog@ssh.phx.nearlyfreespeech.net 'tar -xzvf -'
