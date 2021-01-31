@@ -4,3 +4,4 @@ _site
 .github/workflows/ssh_key
 vendor/bundle
 .bundle
+.jekyll-cache

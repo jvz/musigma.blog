@@ -6,8 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://musigma.blog" # the base hostname & protocol for your site
 permalink: /:year/:month/:day/:title:output_ext
 author: Matt Sicker
-twitter_username: jvz
-github_username:  jvz
+github_username: jvz
 exclude: 
   - "CNAME"
   - "Gemfile"
@@ -18,10 +17,7 @@ exclude:
 timezone: "America/Chicago"
 encoding: "utf-8"
 markdown: kramdown
-theme: jekyll-theme-nn
+theme: minima
 plugins:
   - jekyll-avatar
   - jekyll-sitemap
-  - jekyll-category-pages
-category_path: category
-category_layout: category_index.html
