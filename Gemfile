@@ -4,7 +4,6 @@ gem 'jekyll'
 group :jekyll_plugins do
     gem 'minima'
     gem 'jekyll-feed'
-    gem 'jekyll-assets'
     gem 'jekyll-avatar'
     gem 'jekyll-sitemap'
     gem 'kramdown-parser-gfm'
