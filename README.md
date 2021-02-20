@@ -1,6 +1,8 @@
 This is the source code for my blog on [musigma.blog](https://musigma.blog/).
 
 ## Installation on macOS
+0. Install rbenv: `brew install rbenv`
+0. Enable rbenv: `eval "$(rbenv init -)"`
 0. Install bundler: `gem install bundler`
 0. Install jekyll: `bundle install --path vendor/bundle`
 0. Test the site by executing: `bundle exec jekyll serve`
