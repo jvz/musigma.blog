@@ -9,7 +9,7 @@ permalink: /about/
 
 My name is Matt Sicker, and this is my website.
 Growing from an early interest in the intersection of pure mathematics and computer science, I've long been fascinated by functional programming, cryptography, and metaprogramming generally speaking, along with philosophies like the [free software movement][foss] and the [Apache Way][apacheway].
-I currently work as a security software engineer at [CloudBees][cloudbees] on the [Jenkins Security Team][cert] contributing to [Jenkins][jenkins].
+I currently work as a software engineer at [Apple][apple] contributing to [Spinnaker][spinnaker].
 On the side, I'm a member of the [Apache Software Foundation][asf] where I'm the current Secretary of the foundation and VP, Logging Services (PMC Chair).
 At Apache, I mostly contribute to [Apache Log4j][log4j] and the [Logging Services project][logging] more broadly, though I'm also mentoring the [Apache Teaclave incubating podling][teaclave], a universal secure computing platform with better data privacy and security through use of secure computing hardware extensions like Intel SGX and secure coding practices enforced by [Rust][rust] and its memory safety.
 I'm also a member of the [Apache Commons PMC][commons] and the [Apache OpenWhisk PMC][openwhisk], the latter being a prior [Apache Incubator][incubator] mentorship.
@@ -28,9 +28,8 @@ I'm also a bit nerdy about cooking, coffee, and beer.
 [asf]: https://www.apache.org/
 [incubator]: https://incubator.apache.org/
 [apacheway]: https://www.apache.org/foundation/how-it-works.html
-[jenkins]: https://jenkins.io/
-[cloudbees]: https://www.cloudbees.com/
-[cert]: https://www.jenkins.io/security/team/
+[spinnaker]: https://spinnaker.io/
+[apple]: https://www.apple.com/
 [teaclave]: https://teaclave.apache.org/
 [zig]: https://ziglang.org/
 [commons]: https://commons.apache.org/
