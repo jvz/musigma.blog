@@ -10,7 +10,7 @@ permalink: /about/
 My name is Matt Sicker, and this is my website.
 Growing from an early interest in the intersection of pure mathematics and computer science, I've long been fascinated by functional programming, cryptography, and metaprogramming generally speaking, along with philosophies like the [free software movement][foss] and the [Apache Way][apacheway].
 I currently work as a software engineer at [Apple][apple] contributing to [Spinnaker][spinnaker].
-On the side, I'm a member of the [Apache Software Foundation][asf] where I'm the current Secretary of the foundation and VP, Logging Services (PMC Chair).
+On the side, I'm a member of the [Apache Software Foundation][asf] where I'm the current Secretary of the foundation and a member of the Logging Services PMC.
 At Apache, I mostly contribute to [Apache Log4j][log4j] and the [Logging Services project][logging] more broadly, though I'm also mentoring the [Apache Teaclave incubating podling][teaclave], a universal secure computing platform with better data privacy and security through use of secure computing hardware extensions like Intel SGX and secure coding practices enforced by [Rust][rust] and its memory safety.
 I'm also a member of the [Apache Commons PMC][commons] and the [Apache OpenWhisk PMC][openwhisk], the latter being a prior [Apache Incubator][incubator] mentorship.
 Locally, I'm on the board of directors and secretary of the [Chicago Java Users Group][cjug].
