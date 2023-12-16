@@ -21,7 +21,7 @@ I like to publish as much of my own code as I can using approporiate [open sourc
 During non-pandemic times, I also like to do presentations at and attend meetups related to all these topics.
 I'm also a bit nerdy about cooking, coffee, and beer.
 
-Social: <a rel="me" href="https://infosec.exchange/@sickmatter">Mastodon</a>, [GitHub][gh].
+Social: <a rel="me" href="https://babka.social/@sickmatter">Mastodon</a>, [GitHub][gh].
 
 [log4j]: https://logging.apache.org/log4j/
 [logging]: https://logging.apache.org/
