@@ -16,3 +16,8 @@
     RewriteRule "^([a-z]+/)+(\d{4}/\d{2}/\d{2}/[^/]+\.html)$" "/$2" [R=301]
     RewriteRule "^category/([a-z]+)\.html" "/category/$1/" [R=301]
 </IfModule>
+
+# add social info
+<IfModule mod_headers.c>
+    Header append Link "<https://babka.social/@sickmatter>; rel=\"me\""
+</IfModule>
